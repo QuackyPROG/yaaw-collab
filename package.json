@@ -1,0 +1,24 @@
+{
+  "name": "yaaw-collab",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A human-governed control plane for reliable collaboration between people and autonomous engineering agents.",
+  "license": "MIT",
+  "author": "QuackyPROG",
+  "type": "module",
+  "engines": {
+    "node": ">=24 <27",
+    "npm": ">=11"
+  },
+  "scripts": {
+    "lint": "node scripts/repository-check.mjs",
+    "test": "node --test packages/core/test/*.test.js",
+    "demo": "node apps/demo/src/index.js",
+    "check": "npm run lint && npm test && npm run demo",
+    "package:release": "node scripts/package-release.mjs"
+  },
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ]
+}
